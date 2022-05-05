@@ -15,26 +15,64 @@ _NOTE: Many of these steps reference the [Bouncing Box Project](https://jsbin.co
 
 Always start any programming task by clarifying what you want to do and then breaking it down into small steps. Small steps can get you just about anywhere if you’ve got enough time. If you get stuck, break it down smaller!
 
-With your partner, create a file called `planning.txt` where you write down your answers to these questions
+# Skills Practiced
+- Separation of Concerns and Abstraction
+- Keeping code organized between `initialization`, `core logic`, `helper functions` and `event handler` sections
+- Controlling DOM elements with jQuery
+- Managing data for DOM elements with Objects and Factory Function
+- Managing a collection of Objects with an Array
+- Iteration
+- Initializing new DOM elements with jQuery
 
-### User Story / Gameplay
-- Describe the gameplay
-- What are the conditions when the game begins? 
-- Does the game have an end? If so, what are the conditions for when it ends?
-- What `if`s will there be?
+# Worksheet
 
-### Visual Game Components:
-- What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
-  - Which will be static? (the board)
-  - Which will be animated? (the box)
-- What data will you need to manage each game component? For example, in Bouncing Box, the data values were `positionX`, `speedX`, and `points`.
+Before beginning, complete the <a href="https://drive.google.com/open?id=1h9DBLktvwVCODaAn4vg5FKnbkbyYjLIMik5IMYMbhY0" target="_blank"> Snake Worksheet </a>
 
-### Events / Logic 
-- What events will occur in this game? (timer events, keyboard events, clicking events?)
-- How do those events affect the data of the program?
-- For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+<img src="img/snake-visualization.png">
 
-For example: in bouncing box, when the box is clicked:
-1. The speed is increased
-2. The point total goes up by 1 and is displayed on the box
-3. The position of the box is reset to 0
+# Requirements
+
+## The Board
+**1) Think of the board as a 2-D grid of 20 pixel * 20 pixel squares.** 
+
+For example If the board is `440` pixels wide and `440` pixels tall:
+  - 22 columns along the x-axis
+  - 22 rows along the y-axis
+  
+**2) Game items (the apple, each piece of the snake) must be positioned in intervals of 20 pixels.** 
+
+For example, consider the conversions below:
+```
+snakeHeadColumn = 5;
+snakeHeadX = 20 * snakeHeadColumn = 100
+
+snakeHeadRow = 10;
+snakeHeadY = 20 * snakeHeadRow = 200
+```
+
+## The Snake
+
+**1) Each component of the snake must be an `{ Object }`**
+
+**2) The entire snake's body must be represented as an `[Array]` of these `{Object}`s**
+  - The first object in the Array is the "head" of the snake
+
+**3) When the snake collides with the apple:**
+  - A new DOM element is created and added to the board using jQuery.
+  - A new snake `{Object}` is created and added to the snake `[Array]`
+  
+**4) The snake's head must continously move in 20 pixel intervals**
+  - The head can move along either the x-axis (horizontally) or the y-axis (vertically), but never both (diagonally)
+  - The user controls when the snake's head changes direction
+  - The 2nd snake object follow the head, the 3rd follows the 2nd, etc… 
+
+## The Apple
+**1) The apple must be an `{Object}`**
+
+**2) The apple's location is determined randomly and must be in an unoccupied, valid position.**
+- valid: the apple's x/y coordinate must be a multiple of 20
+- unoccupied: any part of the snake cannot already be there
+
+**3) Each time the snake collides with the apple, the apple is moved to a new, random, unoccupied, and valid location**
+
+**4) The number of apples eaten must be displayed**
