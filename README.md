@@ -28,7 +28,7 @@ Always start any programming task by clarifying what you want to do and then bre
 
 Before beginning, complete the <a href="https://drive.google.com/open?id=1h9DBLktvwVCODaAn4vg5FKnbkbyYjLIMik5IMYMbhY0" target="_blank"> Snake Worksheet </a>
 
-<img src="img/snake-visualization.png">
+<img src="snake-visualization.png">
 
 # Requirements
 
