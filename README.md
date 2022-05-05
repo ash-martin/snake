@@ -1,10 +1,14 @@
+<a href="https://benspector3.github.io/projects/snake/index.html" target="_blank"> Play the demo! (Right Click --> Open in new tab) </a>
+
+<img height=400 src="img/snake.gif">
+
 # To clone this template:
 
 Enter these commands into your bash terminal to clone the repository and delete the `.git/` folder:
 
 ```bash
 git clone https://github.com/ash-martin/snake.git
-rm -rf asd-template/.git
+rm -rf snake/.git
 ```
 
 Then, rename the folder to the project name of your choice.
@@ -28,7 +32,7 @@ Always start any programming task by clarifying what you want to do and then bre
 
 Before beginning, complete the <a href="https://drive.google.com/open?id=1h9DBLktvwVCODaAn4vg5FKnbkbyYjLIMik5IMYMbhY0" target="_blank"> Snake Worksheet </a>
 
-<img src="snake-visualization.png">
+<img src="img/snake-visualization.png">
 
 # Requirements
 
